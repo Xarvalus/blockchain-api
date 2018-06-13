@@ -1,0 +1,38 @@
+version: '3'
+
+volumes:
+  dbdata_mongodb_app:
+    driver: local
+  dbdata_mongodb_blockchain:
+    driver: local
+  data_bigchaindb:
+    driver: local
+
+services:
+  mongodb_app:
+    image: mongo:3.6
+    volumes:
+      - dbdata_mongodb_app:/data/db
+    ports:
+      - 27018:27017
+
+  mongodb_blockchain:
+    image: mongo:3.6
+    volumes:
+      - dbdata_mongodb_blockchain:/data/db
+    ports:
+      - 27019:27017
+    command: mongod --replSet bigchain-rs --smallfiles --oplogSize 128
+
+  bigchaindb:
+    image: bigchaindb/bigchaindb:1.3.0
+    ports:
+      - 59984:9984
+    volumes:
+      - data_bigchaindb:/data
+    environment:
+      - BIGCHAINDB_DATABASE_HOST=mongodb_blockchain
+    depends_on:
+      - mongodb_blockchain
+    stdin_open: true
+    tty: true

@@ -1,0 +1,16 @@
+[ignore]
+.*/node_modules/.*
+.*/test/.*
+
+[include]
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+all=true
+emoji=true
+
+[strict]

@@ -1,0 +1,79 @@
+{
+  "name": "blockchain-api",
+  "version": "0.1.0-alpha.0",
+  "description": "Proof of Concept of business blockchain node network",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Xarvalus/blockchain-api.git"
+  },
+  "author": "Marcin 'Xarvalus' Gromadzki",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js --exec babel-node",
+    "flow:typed": "yarn run flow-typed install",
+    "postinstall": "npm run flow:typed",
+    "test": "mocha --reporter spec",
+    "lint": "eslint **/*.js"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "flow"
+    ],
+    "plugins": []
+  },
+  "dependencies": {
+    "babel-preset-env": "1.6.1",
+    "bcrypt-nodejs": "0.0.3",
+    "bigchaindb-driver": "3.2.0",
+    "bluebird": "3.5.1",
+    "body-parser": "1.18.2",
+    "chalk": "2.3.2",
+    "cheerio": "1.0.0-rc.2",
+    "compression": "1.7.2",
+    "connect-mongo": "2.0.1",
+    "cors": "2.8.4",
+    "dotenv": "5.0.1",
+    "errorhandler": "1.5.0",
+    "express": "4.16.2",
+    "express-graphql": "0.6.12",
+    "express-session": "1.15.6",
+    "express-status-monitor": "1.0.1",
+    "express-validator": "5.0.3",
+    "graphql": "0.13.2",
+    "lusca": "1.5.2",
+    "mongoose": "5.0.9",
+    "morgan": "1.9.0",
+    "multer": "1.3.0",
+    "node-mailer": "0.1.1",
+    "passport": "0.4.0",
+    "passport-local": "1.0.0",
+    "request": "2.83.0",
+    "validator": "9.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-eslint": "8.2.2",
+    "babel-preset-flow": "6.23.0",
+    "chai": "4.1.2",
+    "eslint": "4.18.2",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-chai-friendly": "0.4.1",
+    "eslint-plugin-flowtype": "2.46.1",
+    "eslint-plugin-import": "2.9.0",
+    "flow-bin": "0.68.0",
+    "flow-typed": "2.4.0",
+    "mocha": "5.0.4",
+    "nodemon": "1.17.2",
+    "sinon": "4.4.2",
+    "sinon-mongoose": "2.1.1",
+    "supertest": "3.0.0"
+  }
+}

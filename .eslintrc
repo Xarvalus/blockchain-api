@@ -1,0 +1,37 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype",
+    "chai-friendly"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended"
+  ],
+  "rules": {
+    "comma-dangle": 0,
+    "consistent-return": 0,
+    "no-param-reassign": 0,
+    "no-underscore-dangle": 0,
+    "no-shadow": 0,
+    "no-console": 0,
+    "no-plusplus": 0,
+    "no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2,
+    "semi": [
+      1,
+      "never"
+    ],
+    "max-len": 0,
+    "flowtype/no-types-missing-file-annotation": 0,
+    "flowtype/require-return-type": [
+      2, "always"
+    ],
+    "flowtype/require-parameter-type": [
+      2
+    ]
+  },
+  "globals": {
+    "bigchaindb": true,
+  }
+}

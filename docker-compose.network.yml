@@ -1,0 +1,31 @@
+version: '3'
+
+networks:
+  default:
+    external:
+      name: blockchain-api_default
+
+services:
+  mongodb_node_1:
+    image: mongo:3.6
+    ports:
+      - 30001:27017
+    command: mongod --replSet bigchain-rs --smallfiles --oplogSize 128
+
+  mongodb_node_2:
+    image: mongo:3.6
+    ports:
+      - 30002:27017
+    command: mongod --replSet bigchain-rs --smallfiles --oplogSize 128
+
+  mongodb_node_3:
+    image: mongo:3.6
+    ports:
+      - 30003:27017
+    command: mongod --replSet bigchain-rs --smallfiles --oplogSize 128
+
+  mongodb_node_4:
+    image: mongo:3.6
+    ports:
+      - 30004:27017
+    command: mongod --replSet bigchain-rs --smallfiles --oplogSize 128
